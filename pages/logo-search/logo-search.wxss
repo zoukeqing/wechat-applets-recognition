@@ -1,0 +1,10 @@
+/* 识别结果 */
+.result-title{
+  width: 35%;
+}
+.result-progress{
+  width: 35%;
+}
+.result-num{
+  width: 30%;
+}

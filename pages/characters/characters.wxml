@@ -1,0 +1,51 @@
+<!--pages/characters/characters.wxml-->
+<view class='container'>
+  <view class='page-show'>
+    <view class='show-image'>
+      <image class='image-result' src='{{imageFile}}' mode='widthFix'></image>
+    </view>
+    <view class='area-text' scroll-y="true">
+      <text>{{text}}</text>
+    </view>
+  </view>
+  <!-- 选择复制 -->
+  <view class='btn'>
+    <view  bindtap='checkAll' wx:if="{{q == 1}}">全选</view>
+    <view  bindtap='checkAll' wx:else>反选</view>
+    <view bindtap='copy'>复制</view>
+    <view bindtap='translateBtn' wx:if='{{cardOut == 0}}'>扩展</view>
+    <view bindtap='translateClose' wx:else>关闭</view>
+  </view>
+  <!-- 选中可编辑的文字 -->
+  <view class='square' wx:for='{{wordsData.words_result}}' wx:key='key'>
+    <view id='{{index}}' class="square-text {{pitchOn[index] == 1?'pitch-on':''}}" bindtap='pitchOn' style='top:{{item.location.top*ratio+100}}rpx;left:{{item.location.left*ratio}}rpx;width:{{item.location.width*ratio}}rpx;height:{{item.location.height*ratio}}rpx;'></view>
+  </view> 
+  <!-- 弹出翻译的卡片  -->
+  <view class='translate-card {{cardOut == 1?"card-out":""}}'>
+    <!-- 原文 -->
+    <view class='card-text'>
+      <text>原文：（可编辑）</text>
+    </view>
+    <view class='card-textold'>
+      <textarea bindblur='cardTextareaBlur' value='{{texts}}' maxlength='-1'></textarea>
+    </view>
+    <!-- 译文 -->
+    <view class='card-text'>
+      <text>译文：</text>
+    </view>
+    <view class='card-textnew'>
+      <text>{{tranText}}</text>
+    </view>
+    <!-- 选项 -->
+    <view class='card-btn'>
+      <picker bindchange='bindPinckerChange' value='{{index}}' range='{{tranArray}}'>
+        <button class='common-btn'>翻译为{{tranArray[index]}}</button>
+      </picker>
+      <button class='common-btn' bindtap='copyTran'>复制译文</button>
+    </view>
+    <!-- 右上方关闭 -->
+    <view class='card-close' bindtap='cardClose'>
+      <image src='../../assets/close-card.png'></image>
+    </view>
+  </view>
+</view>

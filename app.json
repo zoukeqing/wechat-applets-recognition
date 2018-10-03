@@ -1,0 +1,24 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/characters/characters",
+    "pages/plant/plant",
+    "pages/animal/animal",
+    "pages/car/car",
+    "pages/dishes/dishes",
+    "pages/logo-search/logo-search",
+    "pages/about/about"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2c2c2c",
+    "navigationBarTitleText": "取字识物",
+    "navigationBarTextStyle":"white"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

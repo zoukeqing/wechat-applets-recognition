@@ -1,0 +1,20 @@
+<!--pages/about/about.wxml-->
+<view class='about-main'>
+  <view wx:for="{{aboutContent}}" class='about-container' wx:key='key'>
+    <view class='about-main-title'>
+      <text style='color:#09bb07'>#.</text>
+      <text class='about-title'>{{item.title}}</text>
+    </view>
+    <view class='about-content'>
+      <text>{{item.content}}</text>
+    </view>
+  </view>
+  <!-- 支持 -->
+  <view class='support'>
+    <!-- 赞赏开发者 -->
+    <!-- <view class='admire-developer'>赞赏开发者</view> -->
+    <!-- 开发者微信 -->
+     <view class='support-me' bindtap='supportMe'>赞助</view> 
+    <!-- <view class='developer-wx' bindtap='devoloperWx'>开发者微信</view> -->
+  </view>
+</view>

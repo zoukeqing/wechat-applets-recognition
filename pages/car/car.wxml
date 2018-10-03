@@ -1,0 +1,48 @@
+<view class='container'>
+  <view class='page-card'>
+    <image src='{{imageFile}}' mode='aspectFill'></image>
+    <view class='card-result'>
+      <image class='card-logo' src='../../assets/logo.png'></image>
+      <view class='card-content'>
+        <!-- 识别结果 -->
+        <view class='content-result'><text>识别结果：</text></view>
+        <view class='result'>
+          <!-- 名称 -->
+          <view class='result-title'><text>名称</text></view>
+          <!-- 年份 -->
+          <view class='result-year'><text>年份</text></view>
+          <!-- 进度条 -->
+          <view class='result-progress'><text>进度条</text></view>
+          <!-- 置信度 -->
+          <view class='result-num'><text>置信度</text></view>
+          
+        </view>
+        <!-- 数据 -->
+        <view class='result' wx:for='{{wordsResult}}' wx:key='key'>
+          <!-- 名称 -->
+          <view class='result-title'>{{item.name}}</view>
+          <!-- 年份 -->
+          <view class='result-year f-size'>{{item.year}}</view>
+          <!-- 进度条 -->
+          <progress class='result-progress' percent='{{item.score}}'></progress>
+          <!-- 置信度 -->
+          <view class='result-num f-size'>{{item.score}}%</view>
+          
+        </view>
+      </view>
+    </view> 
+  </view>
+  <!-- 生成图片分享 -->
+  <view class='share' bindtap='shareCanvas'>生成图片分享</view>
+  <!-- 展示效果 -->
+  <view class='show-canvas {{showCanvas == 1?"share-canvas":""}}'>
+    <view class='canvas-card'>
+      <canvas canvas-id="shareCanvas" style='width:{{cWidth}}px;height:{{cHeight}}px;'></canvas>
+      <view class='card-text'><text>保存图片分享给好友或朋友圈</text></view>
+      <view class='card-btn'>
+        <view bindtap='cancel'>取消</view>
+        <view bindtap='save'>保存</view>
+      </view>
+    </view>
+  </view>
+</view>

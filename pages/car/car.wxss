@@ -1,0 +1,13 @@
+/* 识别结果 */
+.result-title{
+  width: 30%;
+}
+.result-progress{
+  width: 20%;
+}
+.result-num{
+  width: 25%;
+}
+.result-year{
+  width: 25%;
+}

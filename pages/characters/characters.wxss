@@ -1,0 +1,147 @@
+/* pages/characters/characters.wxss */
+.container{
+  padding: 0 0;
+}
+
+.page-show{
+  width: 100%;
+  height: 100%;
+}
+
+.show-image{
+  width: 100%;
+}
+.image-result{
+  width: 100%;
+}
+
+.area-text{
+  display: flex;
+  min-height: 180rpx;
+  margin: 30rpx 20rpx;
+  padding: 10rpx;
+  justify-content: center;
+  align-items: center; 
+  line-height: 38rpx;
+  background-color: rgba(9, 121, 7, 0.3);
+}
+
+.area-text>text{
+   font-size: 25rpx; 
+   color:#CDAD00;
+   /* text-align: center; */
+}
+
+.btn{
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn>view{
+  width: 15%;
+  padding: 10rpx 20rpx;
+  border: 2rpx solid yellow;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5%;
+  color: #09bb07;
+  box-shadow:  0 0 10rpx #888888;
+  margin:0 20rpx 20rpx;
+  text-align:center;
+  font-size:32rpx;
+  line-height:32rpx
+}
+
+
+/* 解析后的的文字方框 */
+.square{
+  position: absolute;
+  top: -100rpx;
+  width: 100%;
+}
+.square-text{
+  position: relative;
+  border: 1rpx solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* 选中的文字样式效果 */
+.pitch-on{
+  border: 1rpx solid #CDAD00;
+  background-color: rgba(205, 173, 0, 0.2);
+}
+
+/* 翻译卡片 */
+.translate-card{
+  display: none;
+  position: absolute;
+  top: 2%;
+  left: 6%;
+  width: 88%;
+  border: 1rpx solid #2c2c2c;
+  background-color: white;
+}
+/* 弹出 */
+.card-out{
+  display:flex;
+  flex-direction:column;
+  min-height:80%;
+
+}
+
+.card-textold{
+  display:flex;
+  min-height:100px;
+  margin:10rpx;
+  border:1rpx solid #CDAD00;
+  padding:10rpx;
+
+}
+.card-textold textarea{
+  width: 100%;
+  font-size: 12px;
+}
+.card-textnew{
+  display:flex;
+  min-height:100px;
+  margin:10rpx;
+  border:1rpx solid #CDAD00;
+  padding:10rpx;
+}
+.card-textnew text{
+  font-size: 12px;
+}
+.card-btn{
+  width: 100%;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  transform: translate(-50%);
+}
+.card-text{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.card-text>text{
+  font-size: 12px;
+  color: yellowgreen;
+  margin-left: 10rpx;
+}
+
+/* 关闭翻译 */
+.card-close{
+  position: absolute;
+  top: -20rpx;
+  right: -20rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+.card-close>image{
+  width: 100%;
+  height: 100%;
+}
